@@ -1,0 +1,24 @@
+GRANT Reload ON *.* TO 'appserver'@'%';
+GRANT Process ON *.* TO 'appserver'@'%';
+GRANT Create tablespace ON *.* TO 'appserver'@'%';
+REVOKE Usage ON *.* FROM 'appserver'@'%';
+GRANT Alter ON *.* TO 'appserver'@'%';
+GRANT Create ON *.* TO 'appserver'@'%';
+GRANT Create view ON *.* TO 'appserver'@'%';
+GRANT Delete ON *.* TO 'appserver'@'%';
+GRANT Delete history ON *.* TO 'appserver'@'%';
+GRANT Drop ON *.* TO 'appserver'@'%';
+GRANT Grant option ON *.* TO 'appserver'@'%';
+GRANT Index ON *.* TO 'appserver'@'%';
+GRANT Insert ON *.* TO 'appserver'@'%';
+GRANT References ON *.* TO 'appserver'@'%';
+GRANT Select ON *.* TO 'appserver'@'%';
+GRANT Show view ON *.* TO 'appserver'@'%';
+GRANT Trigger ON *.* TO 'appserver'@'%';
+GRANT Update ON *.* TO 'appserver'@'%';
+GRANT Alter routine ON *.* TO 'appserver'@'%';
+GRANT Create routine ON *.* TO 'appserver'@'%';
+GRANT Create temporary tables ON *.* TO 'appserver'@'%';
+GRANT Execute ON *.* TO 'appserver'@'%';
+GRANT Lock tables ON *.* TO 'appserver'@'%';
+

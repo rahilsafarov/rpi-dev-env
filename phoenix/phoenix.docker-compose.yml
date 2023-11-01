@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+  phoenix-maindb:
+    image: arm64v8/mariadb:11.0.2-jammy
+    environment:
+      MARIADB_USER: "appserver"
+      MARIADB_PASSWORD: "Phoenix123$$"
+      MARIADB_ROOT_PASSWORD: "Phoenix123$$"
+    volumes:
+      - /home/ubuntu/phoenix/db/main/data:/var/lib/mysql:rw
+      - /home/ubuntu/phoenix/db/main/initdb:/docker-entrypoint-initdb.d:ro
+  phoenix-redis:
+    image: "arm64v8/redis:latest"
+  phoenix-authserver:
+    image: "mmsys.azurecr.io/phoenix-authserver:latest"
+    ports:
+      - "5000:5000"
+    volumes:
+      - /home/ubuntu/phoenix/config/authserver:/app/config:ro
+      - /home/ubuntu/phoenix/db/authserver:/app/db:rw
+      - /home/ubuntu/phoenix/logs:/app/logs:rw
+    environment:
+      ASPNETCORE_ENVIRONMENT: DevelopmentRpi
+  phoenix-appserver:
+    image: "mmsys.azurecr.io/phoenix-appserver:latest"
+    ports:
+      - "5001:5001"
+    volumes:
+      - /home/ubuntu/phoenix/config/appserver:/app/config:rw
+      - /home/ubuntu/phoenix/logs:/app/logs:rw
+    # Uncomment this one in case of Serial connection to the the CS
+    #    devices:
+    #      - "/dev/ttyUSB0:/dev/ttyUSB0"
+    environment:
+      ASPNETCORE_ENVIRONMENT: DevelopmentRpi
+  phoenix-ui:
+    image: "mmsys.azurecr.io/phoenix-ui:latest"
+    ports:
+      - "443:443"

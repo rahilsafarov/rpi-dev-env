@@ -1,0 +1,26 @@
+{
+  "Header": {
+    "FileType": "phoenix.app.settings",
+    "FileVersion": 1
+  },
+  "Payload": {
+    "CsConnection": {
+      "General": {
+        "ConnectionType": "Ethernet"
+      },
+      "Ethernet": {
+        "IpAddress": "91.225.166.158",
+        "Port": 10001
+      },
+      "Serial": {
+        "BaudRate": 38400,
+        "Port": "/dev/ttyUSB0"
+      }
+    },
+    "Features": {
+      "Logging": {
+        "LogCsCommunicationMessages": true
+      }
+    }
+  }
+}
