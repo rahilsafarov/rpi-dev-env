@@ -1,0 +1,10 @@
+﻿{
+  "Name": "Development",
+  "AuthServer": "https://rpi.local:5000",
+  "AppServers": [
+    "https://rpi.local:5001"
+  ],
+  "FrontEndAppServers": [
+    "http://rpi.local:3000"
+  ]
+}
