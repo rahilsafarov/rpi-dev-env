@@ -28,9 +28,9 @@ services:
     volumes:
       - /home/ubuntu/phoenix/config/appserver:/app/config:rw
       - /home/ubuntu/phoenix/logs:/app/logs:rw
-    # Uncomment this one in case of Serial connection to the the CS
-    #    devices:
-    #      - "/dev/ttyUSB0:/dev/ttyUSB0"
+# Uncomment this one in case of Serial connection to the the CS
+#    devices:
+#      - "/dev/ttyUSB0:/dev/ttyUSB0"
     environment:
       ASPNETCORE_ENVIRONMENT: DevelopmentRpi
   phoenix-ui:
